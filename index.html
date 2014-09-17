@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Reprenez le contrôle sur vos dépendances</title>
+
+        <meta name="description" content="Reprenez le contrôle sur vos dépendances">
+        <meta name="author" content="Jérémy Jourdin">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            .reveal section img
+            {
+                background: none;
+                border: none;
+                box-shadow: none;
+                vertical-align: middle;
+            }
+
+            .reveal section h1
+            {
+                font-size: 70px;
+            }
+
+            .reveal section h2
+            {
+                font-size: 60px;
+            }
+
+            .reveal section h3
+            {
+                font-size: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Reprenez le contrôle sur vos dépendances</h1>
+                    <div>
+                        <img src="./img/logo/github.png" height="200px" />
+                        <img src="./img/logo/composer.png" height="200px" />
+                        <br />
+                        <img src="./img/logo/packagist.png" height="100px" />
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <img src="./img/avatar/jjk801.jpg" height="150px" />
+                        <h1>Jérémy JOURDIN</h1>
+                        <h3>Web Developer / Open source addict / Mad electronician</h3>
+                        <div>
+                            <span>
+                                <img src="./img/Octocat.png" height="60px" />
+                                <a href="https://github.com/JJK801">@JJK801</a>
+                            </span>
+                            <span>
+                                <img src="./img/logo/twitter.png" height="80px" />
+                                <a href="https://twitter.com/JJourdin">@JJourdin</a>
+                            </span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Salarié chez</h3>
+                        <img src="./img/logo/trepia.jpg" height="400px" />
+                        <h3>Ingénieur d'étude et développement</h3>
+                        <div>
+                            <span>
+                                <img src="./img/logo/www.png" height="60px" />
+                                <a href="http://trepia.fr/blog/">trepia.fr/blog/</a>
+                            </span>
+                            <span>
+                                <img src="./img/logo/twitter.png" height="80px" />
+                                <a href="https://twitter.com/Trepia">@Trepia</a>
+                            </span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>En Mission chez</h3>
+                        <img src="./img/logo/M6Web.png" height="400px" />
+                        <h3>Lead Developpeur - Web participatif</h3>
+                        <div>
+                            <span>
+                                <img src="./img/logo/www.png" height="60px" />
+                                <a href="http://tech.m6web.fr/">tech.m6web.fr</a>
+                            </span>
+                            <span>
+                                <img src="./img/Octocat.png" height="60px" />
+                                <a href="https://github.com/M6Web">@M6Web</a>
+                            </span>
+                            <span>
+                                <img src="./img/logo/twitter.png" height="80px" />
+                                <a href="https://twitter.com/TechM6Web">@TechM6Web</a>
+                            </span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Open source Fanboy</h3>
+                        <img src="./img/logo/php.png" height="130px" />
+                        <img src="./img/logo/nodejs.png" height="130px" />
+                        <img src="./img/logo/python.png" height="130px" />
+                        <img src="./img/logo/angularjs.png" height="100px" />
+                        <img src="./img/logo/symfony.png" height="130px" />
+                        <img src="./img/logo/composer.png" height="130px" />
+                        <img src="./img/logo/atoum.png" height="100px" />
+                        <img src="./img/logo/raspberry.png" height="100px" />
+                        <img src="./img/logo/arduino.png" height="100px" />
+                        <img src="./img/logo/ubuntu.png" height="70px" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Cette conférence vous est proposée par</h3>
+                        <img src="./img/logo/AFUP_LOGO.png" style="width:49%;" />
+                        <img src="./img/logo/afup_lyon_logo.jpg" style="width:49%" />
+                        <div>
+                            <span>
+                                <img src="./img/logo/www.png" height="60px" />
+                                <a href="http://lyon.afup.org">lyon.afup.org</a>
+                            </span>
+                            <span>
+                                <img src="./img/Octocat.png" height="60px" />
+                                <a href="https://github.com/afup">@afup</a>
+                            </span>
+                            <span>
+                                <img src="./img/logo/twitter.png" height="80px" />
+                                <a href="https://twitter.com/AFUP_lyon">@AFUP_lyon</a>
+                            </span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>N'oubliez pas</h3>
+                        <img src="./img/logo/forumphp.png" />
+                        <br/>
+                        <br/>
+                        <h3>23 & 24 oct. 2014 Beffroi de Montrouge (92)</h3>
+                        <div>
+                            <span>
+                                <img src="./img/logo/www.png" height="60px" />
+                                <a href="http://forumphp.org">forumphp.org</a>
+                            </span>
+                            <span>
+                                <img src="./img/logo/twitter.png" height="80px" />
+                                <a href="https://twitter.com/hashtag/ForumPHP?src=hash">#ForumPHP</a>
+                            </span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Passez prendre l'apéro</h3>
+                        <h4>ApéroPHP : 30 septembre 2014 à 19:00</h4>
+                        <div>
+                            <span>
+                                <img src="./img/logo/www.png" height="60px" />
+                                <a href="http://aperophp.net">aperophp.net</a>
+                            </span>
+                            <span>
+                                <img src="./img/logo/twitter.png" height="80px" />
+                                <a href="https://twitter.com/hashtag/aperophp?src=hash">#aperophp</a>
+                            </span>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Les outils</h1>
+                        <img src="./img/lol/cat_tools.jpg" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <img src="./img/logo/composer.png" height="300px" />
+                        <blockquote>
+                            <div>“There is only one real happiness in life, and that is the happiness of creating.”</div>
+                            <div style="text-align: right;">Frederick Delius</div>
+                        </blockquote>
+                        <blockquote>
+                            <div>“Don't only practice your art, but force your way into its secrets; art deserves that, for it and knowledge can raise man to the Divine.”</div>
+                            <div style="text-align: right;">Ludwig van Beethoven</div>
+                        </blockquote>
+                    </section>
+                    <section>
+                        <h2>Composer - Qu'est ce que c'est ?</h2>
+                        <ul>
+                            <li class="fragment">Un <strong>gestionnaire de dépendances</strong> en <strong>PHP</strong>.</li>
+                            <li class="fragment">Un outil <strong>collaboratif</strong> puissant.</li>
+                            <li class="fragment">Inspiré par <strong>NPM</strong> (Node.js) et <strong>Bundler</strong> (Ruby).</li>
+                            <li class="fragment">Un projet <strong>open source</strong> (300+ contributeurs)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Composer - Fonctionnement</h2>
+                        <div>
+                            <img class="fragment" data-fragment-index="0" src="./img/terminal.png" height="300" style="margin: 0; vertical-align: top;float:left;" />
+                            <div style="display: inline-block; vertical-align: top; text-align: left;">
+                                <div>
+                                    <div class="fragment" data-fragment-index="1" style="display: inline-block; position: relative; vertical-align: top;">
+                                        <div style="display: inline-block; position: relative; vertical-align: top;">
+                                            <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">update</span>
+                                            <div style="height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(180deg);"></div>
+                                        </div>
+                                        <div style="display: inline-block; position: relative; vertical-align: top;">
+                                            <img src="./img/logo/composer.png" height="100" style="margin: 0; vertical-align: top;" />
+                                            <div style="position: absolute; left: 25px; top: 90px; height: 100px;font-size: 20px;">.json</span>
+                                        </div>
+                                    </div>
+                                    <div class="fragment" data-fragment-index="2" style="display: inline-block; position: relative; vertical-align: top;">
+                                        <div style="display: inline-block; position: relative; vertical-align: top;">
+                                            <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px;">resolve</span>
+                                            <div style="height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(180deg);"></div>
+                                        </div>
+                                        <img src="./img/logo/packagist_short.png" height="100" style="margin: 0; vertical-align: top;" />
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div class="fragment" data-fragment-index="6" style="display: inline-block; position: relative; vertical-align: top;">
+                                        <span style="position: absolute; left: 30px; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">fallback</span>
+                                        <div style="margin: 0 100px 0 0; height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(45deg);"></div>
+                                    </div>
+                                    <div class="fragment" data-fragment-index="3" style="display: inline-block; position: relative; vertical-align: top;">
+                                        <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">write</span>
+                                        <div style="margin: 0 130px 0 0; height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(-22deg);"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="display: inline-block; position: relative; vertical-align: top;">
+                                        <div class="fragment" data-fragment-index="5" style="display: inline-block; position: relative; vertical-align: top;">
+                                            <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">install</span>
+                                            <div style="height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(180deg);"></div>
+                                        </div>
+                                        <div class="fragment" data-fragment-index="3" style="display: inline-block; position: relative; vertical-align: top;">
+                                            <img src="./img/logo/composer.png" height="100" style="margin: 0; vertical-align: top;" />
+                                            <div style="position: absolute; left: 25px; top: 90px; height: 100px;font-size: 20px;">.lock</span>
+                                        </div>
+                                    </div>
+                                    <div class="fragment" data-fragment-index="4" style="display: inline-block; position: relative; vertical-align: top;">
+                                        <div style="display: inline-block; position: relative; vertical-align: top;">
+                                            <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px;">download</span>
+                                            <div style="height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(180deg);"></div>
+                                        </div>
+                                        <img src="./img/logo/github.png" height="80" style="margin: 0; vertical-align: top;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Composer - Points forts / Points faibles</h2>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; vertical-align: top; width: 49%;">
+                                <div style="font-size: 50px; color: green;">+</div>
+                                <div class="fragment">Installation</div>
+                                <div class="fragment">Usage</div>
+                                <div class="fragment">Semantic Versioning</div>
+                            </div>
+                            <div style="display: inline-block; vertical-align: top; width: 50%;">
+                                <div  style="font-size: 50px; color: red;">-</div>
+                                <div class="fragment">En Alpha (depuis 2012)</div>
+                                <div class="fragment">Lourd à l'éxecution</div>
+                                <div class="fragment">Code à refactoriser / solidifier</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Composer - Mainteneurs du projet</h3>
+                        <a href="https://github.com/composer/composer" style="font-size: 30px;" />https://github.com/composer/composer</a>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/jboggiano.jpeg" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/nadermann.jpeg" height="60px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;font-weight: bold">Jordi<br /> Boggiano</td>
+                                    <td style="text-align: center;font-weight: bold">Nils<br/> Adermann</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">Co-fondateur / Développeur</td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">CTO / Lead Développeur</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px;">Nelmio</td>
+                                    <td style="text-align: center; font-size: 22px;">Forumatic</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/Octocat.png" height="40px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/Seldaek">@Seldaek</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/logo/twitter.png" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/seldaek">@seldaek</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <img src="./img/logo/packagist.png" />
+                        <img src="./img/archivist.jpg" />
+                    </section>
+                    <section>
+                        <h2>Packagist - Qu'est ce que c'est ?</h2>
+                        <ul>
+                            <li class="fragment">Un <strong>annuaire de paquets</strong> en <strong>PHP</strong> pour <strong>Composer</strong>.</li>
+                            <li class="fragment">~35k Dépôts référencés déclinés en ~120k Versions</li>
+                            <li class="fragment">Un projet <strong>open source</strong> (50+ contributeurs)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Packagist - Fonctionnement</h2>
+                        <div>
+                            <img class="fragment" data-fragment-index="0" src="./img/logo/composer.png" height="175" style="margin: 0; vertical-align: top;" />
+                            <div style="display: inline-block; position: relative; vertical-align: top;">
+                                <div class="fragment" data-fragment-index="1" style="position: relative;">
+                                    <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">Packages Informations</span>
+                                    <div style="margin: 30px 0; height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;"></div>
+                                </div>
+                            </div>
+                            <img class="fragment" data-fragment-index="1" src="./img/logo/packagist_short.png" height="175" style="margin: 0; vertical-align: top;" />
+                            <div style="display: inline-block; position: relative; vertical-align: top;">
+                                <div class="fragment" data-fragment-index="4" style="position: relative;">
+                                    <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">Push informations</span>
+                                    <div style="margin: 0; height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;"></div>
+                                </div>
+                            </div>
+                            <img class="fragment" data-fragment-index="3" src="./img/logo/github.png" height="110" style="margin: 0; vertical-align: top;;" />
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Packagist - Points forts / Points faibles</h2>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; vertical-align: top; width: 49%;">
+                                <div style="font-size: 50px; color: green;">+</div>
+                                <div class="fragment">Natif dans composer</div>
+                                <div class="fragment">Interface web riche</div>
+                                <div class="fragment">Mis à jour via les hooks github</div>
+                                <div class="fragment">Installation privée possible</div>
+                            </div>
+                            <div style="display: inline-block; vertical-align: top; width: 50%;">
+                                <div  style="font-size: 50px; color: red;">-</div>
+                                <div class="fragment">Distant (fiabilité + latence)</div>
+                                <div class="fragment">Simple annuaire</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Packagist - Mainteneurs du projet</h3>
+                        <a href="https://github.com/composer/packagist" style="font-size: 30px;" />https://github.com/composer/packagist</a>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/jboggiano.jpeg" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/nadermann.jpeg" height="60px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;font-weight: bold">Jordi<br /> Boggiano</td>
+                                    <td style="text-align: center;font-weight: bold">Nils<br/> Adermann</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">Co-fondateur / Développeur</td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">CTO / Lead Développeur</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px;">Nelmio</td>
+                                    <td style="text-align: center; font-size: 22px;">Forumatic</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/Octocat.png" height="40px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/Seldaek">@Seldaek</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/logo/twitter.png" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/seldaek">@seldaek</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Satis</h1>
+                        <img src="./img/entrepot.jpeg" />
+                    </section>
+                    <section>
+                        <h2>Satis - Qu'est ce que c'est ?</h2>
+                        <ul>
+                            <li class="fragment">Un <strong>dépôt de paquets privé</strong> en <strong>PHP</strong> pour <strong>Composer</strong>.</li>
+                            <li class="fragment">Un projet <strong>open source</strong> (25+ contributeurs)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Satis - Fonctionnement</h2>
+                        <div>
+                            <img class="fragment" data-fragment-index="0" src="./img/logo/composer.png" height="175" style="margin: 0; vertical-align: top;" />
+                            <div style="display: inline-block; position: relative; vertical-align: top;">
+                                <div style="display: inline-block; position: relative; vertical-align: top;">
+                                    <div class="fragment" data-fragment-index="1" style="position: relative;">
+                                        <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">Packages Informations</span>
+                                        <div style="margin: 30px 0; height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;"></div>
+                                    </div>
+                                </div>
+                                <div class="fragment" data-fragment-index="1" style="display: inline-block; position: relative; vertical-align: top; width: 196px; padding: 65px 0; border: 1px dashed black;">Satis</div>
+                                <div style="display: inline-block; position: relative; vertical-align: top;">
+                                    <div class="fragment" data-fragment-index="4" style="position: relative;">
+                                        <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">Fetch informations</span>
+                                        <div style="margin: 0; height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(180deg);"></div>
+                                    </div>
+                                    <div class="fragment" data-fragment-index="5" style="position: relative;">
+                                        <span style="position: absolute; left: 0; height: 100px; width: 200px; text-align: center; font-size: 25px; font-style: italic;">Fetch packages</span>
+                                        <div style="margin: 0; height: 100px; width: 200px; background: url(./img/arrow.png) no-repeat; background-size: contain;transform: rotate(180deg);"></div>
+                                    </div>
+                                </div>
+                                <img class="fragment" data-fragment-index="3" src="./img/logo/github.png" height="110" style="margin: 40px 0 0 0; vertical-align: top;;" />
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Satis - Points forts / Points faibles</h2>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; vertical-align: top; width: 49%;">
+                                <div style="font-size: 50px; color: green;">+</div>
+                                <div class="fragment">Dépôt de paquets</div>
+                                <div class="fragment">Privé</div>
+                                <div class="fragment">Local (fiabilité + latence)</div>
+                                <div class="fragment">Résout les dépendances</div>
+                            </div>
+                            <div style="display: inline-block; vertical-align: top; width: 50%;">
+                                <div  style="font-size: 50px; color: red;">-</div>
+                                <div class="fragment">Pas de synchro (builds manuels)</div>
+                                <div class="fragment">Définition manuelle des dépôts</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Satis - Mainteneurs du projet</h3>
+                        <a href="https://github.com/composer/satis" style="font-size: 30px;" />https://github.com/composer/satis</a>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/jboggiano.jpeg" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/nadermann.jpeg" height="60px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;font-weight: bold">Jordi<br /> Boggiano</td>
+                                    <td style="text-align: center;font-weight: bold">Nils<br/> Adermann</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">Co-fondateur / Développeur</td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">CTO / Lead Développeur</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px;">Nelmio</td>
+                                    <td style="text-align: center; font-size: 22px;">Forumatic</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/Octocat.png" height="40px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/Seldaek">@Seldaek</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/logo/twitter.png" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/seldaek">@seldaek</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Toran Proxy</h1>
+                        <img src="./img/proxy.jpg" />
+                    </section>
+                    <section>
+                        <h2>Toran Proxy - Qu'est ce que c'est ?</h2>
+                        <ul>
+                            <li class="fragment">Un <strong>dépôt de paquets privé</strong> en <strong>PHP</strong> pour <strong>Composer</strong>.</li>
+                            <li class="fragment">Un projet <strong>closed source</strong> et <strong>payant</strong> (maintenu Nelmio)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Toran Proxy - Points forts / Points faibles</h2>
+                        <div style="text-align: center;">
+                            <div style="display: inline-block; vertical-align: top; width: 49%;">
+                                <div style="font-size: 50px; color: green;">+</div>
+                                <div class="fragment">Dépôt de paquets</div>
+                                <div class="fragment">Privé</div>
+                                <div class="fragment">Local (fiabilité + latence)</div>
+                                <div class="fragment">Interface d'administration</div>
+                                <div class="fragment">Authentification</div>
+                            </div>
+                            <div style="display: inline-block; vertical-align: top; width: 50%;">
+                                <div  style="font-size: 50px; color: red;">-</div>
+                                <div class="fragment">Pas de synchro (cron)</div>
+                                <div class="fragment">Définition manuelle des dépôts</div>
+                                <div class="fragment">Closed source</div>
+                                <div class="fragment">Payant</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Toran Proxy - Mainteneurs du projet</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/jboggiano.jpeg" height="60px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;font-weight: bold">Jordi<br /> Boggiano</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">Co-fondateur / Développeur</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px;">Nelmio</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/Octocat.png" height="40px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/Seldaek">@Seldaek</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/logo/twitter.png" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/seldaek">@seldaek</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Orchestration</h1>
+                        <img src="./img/engrenage.jpg" height="500" />
+                    </section>
+                    <section>
+                        <h3>Utiliser Packagist</h3>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">composer.json:</div>
+                        <pre><code data-trim>
+{
+    "repositories": [],
+    "require": {
+        "acme/my-public-packagist-dependency": "dev-master"
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Construire Satis</h3>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">satis.json:</div>
+                        <pre><code data-trim>
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://my-repo.tld/my-private-satis-dependency.git"
+        }
+    ],
+    "require": {
+        "acme/my-private-satis-dependency": "*"
+    }
+}
+                        </code></pre>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">lancement du build:</div>
+                        <pre><code data-trim>
+$ ./bin/satis build ./satis.json /build
+                        </code></pre>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">mettre à jour un package:</div>
+                        <pre><code data-trim>
+$ ./bin/satis build ./satis.json /build acme/my-private-satis-dependency 
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Utiliser Satis</h3>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">composer.json:</div>
+                        <pre><code data-trim>
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://my-satis-domain.tld"
+        }
+    ],
+    "require": {
+        "acme/my-private-satis-dependency": "dev-master"
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Utiliser Toran Proxy</h3>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">composer.json:</div>
+                        <pre><code data-trim>
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://user:pass@my-toran-domain.tld"
+        }
+    ],
+    "require": {
+        "acme/my-public-packagist-dependency": "dev-master"
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Désactiver Packagist</h3>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">composer.json:</div>
+                        <pre><code data-trim>
+{
+    "repositories": [
+        {
+            "packagist": false
+        }
+    ]
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>L'approche M6Web</h1>
+                        <img src="./img/lol/cat_think.jpg" />
+                    </section>
+
+                    <section>
+                        <h3>Participants au projet</h3>
+                        <a href="http://tech.m6web.fr/composer-installation-without-github.html" style="font-size: 30px;" />http://tech.m6web.fr/composer-installation-without-github.html</a>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/omansour.jpeg" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/peikk0.png" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <img src="./img/avatar/nadermann.jpeg" height="60px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;font-weight: bold">Olivier<br/> Mansour</td>
+                                    <td style="text-align: center;font-weight: bold">Pierre<br/> Guinoiseau</td>
+                                    <td style="text-align: center;font-weight: bold">Nils<br/> Adermann</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">Responsable Vidéo</td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">BOFH (Sysadmin)</td>
+                                    <td style="text-align: center; font-size: 22px; font-style: italic;">CTO / Lead Développeur</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center; font-size: 22px;">M6Web</td>
+                                    <td style="text-align: center; font-size: 22px;">HR Team / M6Web</td>
+                                    <td style="text-align: center; font-size: 22px;">Forumatic</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/Octocat.png" height="40px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/omansour">@omansour</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/peikk0">@peikk0</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://github.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./img/logo/twitter.png" height="60px" />
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/omansour">@omansour</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/peikk00">@peikk00</a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="https://twitter.com/naderman">@naderman</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Etape 1:</h1>
+                        <blockquote>Comment on gère nos dépendances internes ?</blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Besoins:</h2>
+                        <ul>
+                            <li class="fragment">Un référentiel des projets internes (packages.json)</li>
+                            <li class="fragment">Des archives compressées (dist) des versions stables</li>
+                            <li class="fragment">Un build automatisé</li>
+                            <li class="fragment">Des notifications sur l'état des build</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Architecture</h2>
+                        <img src="./img/archi/Origin.jpeg" style="background: white; padding: 20px;"/>
+                    </section>
+
+                    <section>
+                        <h2>Configuration Satis</h2>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">satis.json:</div>
+                        <pre><code data-trim style="max-height: 500px;">
+{
+    "name": "My amazing new Satis",
+    "homepage": "http://satis.domain.tld/",
+    "archive": {
+        "directory": "dist",
+        "format":    "zip",
+        "skip-dev":  true
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://my-repo.tld/my-private-satis-dependency.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://my-repo.tld/my-private-satis-dependency-2.git"
+        }
+    ],
+    "require-all": true
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Configuration Projet</h2>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">composer.json:</div>
+                        <pre><code data-trim style="max-height: 500px;">
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://satis.domain.tld"
+        }
+    ],
+    "require": {
+        "acme/my-private-satis-dependency":   "~2.3",
+        "acme/my-private-satis-dependency-2": "dev-master",
+        "twig/twig":                          "~1.7"
+    }
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Etape 2:</h1>
+                        <blockquote>Github est tombé, qui est chaud pour un baby ?</blockquote>
+                        <blockquote>On a dépassé le rate limit Github, pause café ?</blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Besoins:</h2>
+                        <ul>
+                            <li class="fragment">Un proxy interne de nos dépendances github</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Architecture</h2>
+                        <img src="./img/archi/Satis.jpeg" style="background: white; padding: 20px;"/>
+                    </section>
+
+                    <section>
+                        <h2>Configuration Satis Proxy</h2>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">satis.json:</div>
+                        <pre><code data-trim style="max-height: 500px;">
+{
+    "name": "My amazing new Satis proxy",
+    "homepage": "http://satis-proxy.domain.tld/",
+    "archive": {
+        "directory": "dist",
+        "format": "zip",
+        "skip-dev": true,
+        "absolute-directory" : "dist"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packagist.org"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.7"
+    },
+    "require-dependencies": true
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Configuration Projet</h2>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">composer.json:</div>
+                        <pre><code data-trim style="max-height: 500px;">
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://satis.domain.tld"
+        },
+        {
+            "type": "composer",
+            "url": "http://satis-proxy.domain.tld"
+        },
+        {
+            "packagist": false
+        }
+    ],
+    "require": {
+        "acme/my-private-satis-dependency":   "~2.3",
+        "acme/my-private-satis-dependency-2": "dev-master",
+        "twig/twig":                          "~1.7"
+    }
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Etape 3:</h1>
+                        <blockquote>Comment on fait pour AWS ?</blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Besoins:</h2>
+                        <ul>
+                            <li class="fragment">Découpler AWS de notre architecture interne</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Architecture</h2>
+                        <img src="./img/archi/AWS.jpeg" style="background: white; padding: 20px;"/>
+                    </section>
+                    <section>
+                        <h2>Installation du pluggin composer-aws</h2>
+                        <pre><code data-trim style="max-height: 500px;">
+$ composer global require "naderman/composer-aws:~0.2"
+                        </code></pre>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">~/.composer/config.json:</div>
+                        <pre><code data-trim style="max-height: 500px;">
+{
+    "config": {
+        "amazon-aws": {
+            "key": "your aws access key",
+            "secret": "your aws secret"
+        }
+    }
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Configuration Projet AWS</h2>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">composer.json:</div>
+                        <pre><code data-trim style="max-height: 500px;">
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "s3://my-bucket/satis"
+        },
+        {
+            "type": "composer",
+            "url": "s3://my-bucket/satis-proxy"
+        },
+        {
+            "packagist": false
+        }
+    ],
+    "require": {
+        "acme/my-private-satis-dependency":   "~2.3",
+        "acme/my-private-satis-dependency-2": "dev-master",
+        "twig/twig":                          "~1.7"
+    }
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Etape 4:</h1>
+                        <blockquote>Satis sera à jour dans 5 minutes.</blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Besoins:</h2>
+                        <ul>
+                            <li class="fragment">Permettre aux utilisateurs de lancer les builds</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Architecture</h2>
+                        <img src="./img/archi/Jenkins.jpeg" style="background: white; padding: 20px;"/>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Etape 5: (spoil)</h1>
+                        <blockquote>Je suis obligé de mettre Satis à jour manuellement ?</blockquote>
+                        <blockquote>Pourquoi Satis met du temps pour se mettre à jour ?</blockquote>
+                        <blockquote>Faut mettre quoi à jour pour mon nouveau projet ?</blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Besoins:</h2>
+                        <ul>
+                            <li class="fragment">Mettre à jour le package sur satis à la suite des jobs</li>
+                            <li class="fragment">Mettre en place un annuaire des paquets</li>
+                            <li class="fragment">Alléger la configuration de satis</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Architecture</h2>
+                        <img src="./img/archi/Final.jpeg" style="background: white; padding: 20px;"/>
+                    </section>
+
+                    <section>
+                        <h2>Configuration Satis</h2>
+                        <div style="text-align: left; font-size: x-large; font-style: italic;">satis.json:</div>
+                        <pre><code data-trim style="max-height: 600px;">
+{
+    "name": "My amazing new Satis",
+    "homepage": "http://satis.domain.tld/",
+    "archive": {
+        "directory": "dist",
+        "format":    "zip",
+        "skip-dev":  true
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packagist.domain.tld"
+        },
+        {
+            "type": "composer",
+            "url": "http://packagist.org"
+        }
+    ],
+    "require": {
+        "acme/my-private-satis-dependency":   "*",
+        "acme/my-private-satis-dependency-2": "*",
+    },
+    "require-dependencies": true
+}
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Rétrospective:</h1>
+                        <h3>Quelles leçons avons nous tirées de ce projet ?</h3>
+                    </section>
+
+                    <section>
+                        <h2>Communiquer entre les équipes</h2>
+                        <img src="./img/lol/comunication.jpg" />
+                    </section>
+
+                    <section>
+                        <h2>Adapter l'outil au besoin</h2>
+                        <img src="./img/lol/outil.jpg" />
+                    </section>
+
+                    <section>
+                        <h2>Prendre le temps d'améliorer les outils</h2>
+                        <img src="./img/lol/burnout.jpg" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Questions ?</h1>
+                    </section>
+
+                    <section>
+                        <h1>Prochaine conférence:</h1>
+                        <img src="./img/logo/AFUP_LOGO.png" style="width:49%;" />
+                        <h2 style="color: orange">Développement Symfony rapide<br /> avec un modèle de contenu</h2>
+                        <h3>par Bertrand Dunogier - EZSystems</h3>
+                        <h3>le 15 Octobre 2014 à 19h</h3>
+                        <h3>à Epitech Lyon - 86 Boulevard Marius Vivier Merle</h3>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ],
+                keyboard: {
+                    40: 'next',
+                    39: 'next',
+                    38: 'prev',
+                    37: 'prev'
+                }
+            });
+
+        </script>
+
+    </body>
+</html>
